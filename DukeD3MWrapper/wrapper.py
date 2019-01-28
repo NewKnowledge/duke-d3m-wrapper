@@ -37,6 +37,12 @@ class Hyperparams(hyperparams.Hyperparams):
     pass
 
 class duke(TransformerPrimitiveBase[Inputs, Outputs, Hyperparams]):
+    """
+        Abstractive tabulat dataset summarization using pre-trained knowledge graph 
+        embeddings. Uses a word2vec model trained on Wikipedia to assign abstractive summary 
+        tags to the detaset, as well as confidence values to each tag. Tags come from the 
+        corresponding Wikipedia subject ontology.
+    """
     metadata = metadata_base.PrimitiveMetadata({
         # Simply an UUID generated once and fixed forever. Generated using "uuid.uuid4()".
         'id': "46612a42-6120-3559-9db9-3aa9a76eb94f",
