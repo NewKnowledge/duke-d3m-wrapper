@@ -76,7 +76,7 @@ class duke(TransformerPrimitiveBase[Inputs, Outputs, Hyperparams]):
         },
         ],
         # The same path the primitive is registered with entry points in setup.py.
-        'python_path': 'd3m.primitives.data_cleaning.labeler.Duke',
+        'python_path': 'd3m.primitives.data_cleaning.labler.Duke',
         # Choose these from a controlled vocabulary in the schema. If anything is missing which would
         # best describe the primitive, make a merge request.
         'algorithm_types': [
