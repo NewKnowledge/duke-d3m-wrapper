@@ -13,7 +13,7 @@ setup(name='DukeD3MWrapper',
     ],
     entry_points = {
         'd3m.primitives': [
-            'distil.Duke = DukeD3MWrapper:duke'
+            'data_cleaning.labeler.Duke = DukeD3MWrapper:duke'
         ],
     },
 )
