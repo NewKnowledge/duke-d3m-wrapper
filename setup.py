@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(name='DukeD3MWrapper',
-    version='1.1.5',
+    version='1.1.6',
     description='A wrapper for integrating Duke into the D3M environment',
     packages=['DukeD3MWrapper'],
     install_requires=["numpy",
@@ -13,7 +13,7 @@ setup(name='DukeD3MWrapper',
     ],
     entry_points = {
         'd3m.primitives': [
-            'distil.duke = DukeD3MWrapper:duke'
+            'distil.Duke = DukeD3MWrapper:duke'
         ],
     },
 )
