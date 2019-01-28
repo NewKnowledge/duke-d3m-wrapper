@@ -46,6 +46,7 @@ class duke(TransformerPrimitiveBase[Inputs, Outputs, Hyperparams]):
         'keywords': ['Dataset Descriptor','Text', 'NLP','Abstractive Summarization'],
         'source': {
             'name': __author__,
+            'contact': __contact__,
             'uris': [
                 # Unstructured URIs.
                 "https://github.com/NewKnowledge/duke-d3m-wrapper",
