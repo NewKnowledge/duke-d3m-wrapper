@@ -19,12 +19,13 @@ from d3m.primitive_interfaces.base import CallResult
 from d3m import container, utils
 from d3m.container import DataFrame as d3m_DataFrame
 from d3m.metadata import hyperparams, base as metadata_base
-from d3m.primitives.datasets import DatasetToDataFrame
+from d3m.primitives.data_transformation.dataset_to_dataframe import Common as DatasetToDataFrame
 
 from common_primitives import utils as utils_cp
 
 __author__ = 'Distil'
-__version__ = '1.1.5'
+__version__ = '1.1.6'
+__contact__ = 'mailto:paul@newknowledge.io'
 
 Inputs = container.pandas.DataFrame
 Outputs = container.pandas.DataFrame
@@ -36,6 +37,12 @@ class Hyperparams(hyperparams.Hyperparams):
     pass
 
 class duke(TransformerPrimitiveBase[Inputs, Outputs, Hyperparams]):
+    """
+        Abstractive tabulat dataset summarization using pre-trained knowledge graph 
+        embeddings. Uses a word2vec model trained on Wikipedia to assign abstractive summary 
+        tags to the detaset, as well as confidence values to each tag. Tags come from the 
+        corresponding Wikipedia subject ontology.
+    """
     metadata = metadata_base.PrimitiveMetadata({
         # Simply an UUID generated once and fixed forever. Generated using "uuid.uuid4()".
         'id': "46612a42-6120-3559-9db9-3aa9a76eb94f",
@@ -45,6 +52,7 @@ class duke(TransformerPrimitiveBase[Inputs, Outputs, Hyperparams]):
         'keywords': ['Dataset Descriptor','Text', 'NLP','Abstractive Summarization'],
         'source': {
             'name': __author__,
+            'contact': __contact__,
             'uris': [
                 # Unstructured URIs.
                 "https://github.com/NewKnowledge/duke-d3m-wrapper",
@@ -68,7 +76,7 @@ class duke(TransformerPrimitiveBase[Inputs, Outputs, Hyperparams]):
         },
         ],
         # The same path the primitive is registered with entry points in setup.py.
-        'python_path': 'd3m.primitives.distil.duke',
+        'python_path': 'd3m.primitives.data_cleaning.labler.Duke',
         # Choose these from a controlled vocabulary in the schema. If anything is missing which would
         # best describe the primitive, make a merge request.
         'algorithm_types': [
