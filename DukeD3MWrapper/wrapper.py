@@ -24,7 +24,7 @@ from d3m.primitives.data_transformation.dataset_to_dataframe import Common as Da
 from common_primitives import utils as utils_cp
 
 __author__ = 'Distil'
-__version__ = '1.1.6'
+__version__ = '1.1.7'
 __contact__ = 'mailto:paul@newknowledge.io'
 
 Inputs = container.pandas.DataFrame
@@ -76,7 +76,7 @@ class duke(TransformerPrimitiveBase[Inputs, Outputs, Hyperparams]):
         },
         ],
         # The same path the primitive is registered with entry points in setup.py.
-        'python_path': 'd3m.primitives.data_cleaning.labler.Duke',
+        'python_path': 'd3m.primitives.data_cleaning.text_summarization.Duke',
         # Choose these from a controlled vocabulary in the schema. If anything is missing which would
         # best describe the primitive, make a merge request.
         'algorithm_types': [
