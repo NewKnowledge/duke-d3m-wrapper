@@ -21,11 +21,9 @@ from d3m.container import DataFrame as d3m_DataFrame
 from d3m.metadata import hyperparams, base as metadata_base
 from d3m.primitives.data_transformation.dataset_to_dataframe import Common as DatasetToDataFrame
 
-from common_primitives import utils as utils_cp
-
 __author__ = 'Distil'
-__version__ = '1.1.7'
-__contact__ = 'mailto:paul@newknowledge.io'
+__version__ = '1.2.0'
+__contact__ = 'mailto:sanjeev@yonder.co'
 
 Inputs = container.pandas.DataFrame
 Outputs = container.pandas.DataFrame
@@ -192,16 +190,3 @@ class duke(TransformerPrimitiveBase[Inputs, Outputs, Hyperparams]):
 
 
         return CallResult(duke_df)
-
-if __name__ == '__main__':
-    # LOAD DATA AND PREPROCESSING
-    input_dataset = container.Dataset.load('file:///home/196_autoMpg/196_autoMpg_dataset/datasetDoc.json')
-    ds2df_client = DatasetToDataFrame(hyperparams={"dataframe_resource":"0"})
-    df = ds2df_client.produce(inputs=input_dataset)
-    volumes = {} # d3m large primitive architecture Downloadsdictionary of large files
-    volumes["en.model"]='/home/en.model'
-    duke_client = duke(hyperparams={},volumes=volumes)
-    #frame = pandas.read_csv("https://query.data.world/s/10k6mmjmeeu0xlw5vt6ajry05",dtype=str)
-    #frame = pandas.read_csv("https://s3.amazonaws.com/d3m-data/merged_o_data/o_4550_merged.csv",dtype=str)
-    result = duke_client.produce(inputs = df.value)
-    print(result.value)
