@@ -23,7 +23,6 @@ pipeline_description.add_step(step_1)
 # Step 2: Duke primitive
 step_2 = PrimitiveStep(primitive = index.get_primitive('d3m.primitives.data_cleaning.text_summarization.Duke'))
 step_2.add_argument(name = 'inputs', argument_type = ArgumentType.CONTAINER, data_reference = 'steps.1.produce')
-step_2.add_argument(name = 'outputs', argument_type = ArgumentType.CONTAINER, data_reference = 'steps.1.produce')
 step_2.add_output('produce')
 pipeline_description.add_step(step_2)
 
