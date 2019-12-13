@@ -1,8 +1,7 @@
 #!/bin/bash -e
 
-Datasets=('196_autoMpg')
-Datasets=('186_baseball' '26_radon_seed' '38_sick' '57_hypothyroid' 'LL0_186_braziltourism' 'LL0_207_autoPrice' 'SEMI_1217_click_prediction_small' 'uu4_SPECT' 'LL0_acled_reduced' 'LL1_multilearn_emotions')
-
+#Datasets=('196_autoMpg')
+Datasets=('196_autoMpg' '185_baseball' '26_radon_seed' '38_sick' '57_hypothyroid' 'LL0_186_braziltourism' 'LL0_207_autoPrice' 'SEMI_1217_click_prediction_small' 'uu4_SPECT' 'LL0_acled_reduced' 'LL1_multilearn_emotions')
 
 cd "/duke_data/"
 
