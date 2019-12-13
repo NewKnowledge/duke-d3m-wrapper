@@ -107,8 +107,6 @@ class duke(TransformerPrimitiveBase[Inputs, Outputs, Hyperparams]):
         """
 
         # sub-sample percentage of records from data frame
-        if not self.hyperparams:
-            self.hyperparams['records'] = 1
         records = self.hyperparams['records']
         frame = inputs.sample(frac = records)
 
